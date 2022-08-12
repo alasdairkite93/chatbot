@@ -1,4 +1,4 @@
-# uselesschatbot
+# Slight less uselesschatbot
 well a little useless 
 Class Project -> home project
 
