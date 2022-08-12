@@ -5,23 +5,44 @@
   <title>Title of the document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <style> p { font-size:120%; } </style> 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="chatbox.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    p {
+      font-size:120%; }
+  button {
+    display: block;
+  }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#div1").fadeToggle();
+      });
+    });
+  </script>
 </head>
 <body>
 <div class="container">
   <div class="row">
     <div clss="col-sm-12">
-      <h1>Welcome to useless chat bot!</h1>
+      <h1>Welcome to The Watch Shop!</h1>
       <br />
-      <div id="conversation">
-        <p><strong>Useless bot:</strong> Hello, how are you?</p>
-      </div>
-      <br />
-      <div class="form-group row">
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="message" placeholder="Your answer...">
+      <button class="open-button" onclick="openChat()">Chat</button>
+      <div class="chat-popup" id="div1">
+        <div id="conversation" class="form-container">
+          <p><strong>The Watch Shop:</strong> Hello, what can I help you with:</p>
+          <button class="btn-convo" value="purchases" id="purchases" onclick="loadDoc('purchases')">Purchases</button>
+          <button class="btn-convo" value="products" id="products" onclick="loadDoc('products')">Products</button>
+          <button class="btn-convo" value="repairs" id="repairs" onclick="loadDoc('repairs')">Repairs</button>
+          <button class="btn-convo" value="contact" id="contact" onclick="loadDoc('contact')">Contact</button>
+          <button class="btn-convo" value="about" id="about" onclick="loadDoc('about')">About</button>
+          <button class="btn-convo" value="anything" id="anything" onclick="loadDoc('anything')">Anything else?</button>
         </div>
-        <button class="btn btn-primary col-sm-2" id="sayit">Say it!</button>
+        <button type="button" class="close-button" onclick="closeForm()">
+          Close
+        </button>
       </div>
     </div>
   </div>
